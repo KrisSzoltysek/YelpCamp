@@ -2,18 +2,19 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+var Campground = require("./models/campground");
 
 mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
-var camgroundSchema = new mongoose.Schema({
-    name: String,
-    image: String,
-    description: String
-});
+// var camgroundSchema = new mongoose.Schema({
+//     name: String,
+//     image: String,
+//     description: String
+// });
 
-var Campground = mongoose.model("Campground", camgroundSchema);
+// var Campground = mongoose.model("Campground", camgroundSchema);
 
 /*var campgrounds = [
         {name: "WellsNextSea", image: "https://farm3.staticflickr.com/2259/2182093741_164dc44a24.jpg"},
